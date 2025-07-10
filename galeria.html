@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algumas Lembranças Nossas 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffcce0);
+      min-height: 100vh;
+      padding: 40px;
+      color: #800040;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://www.transparenttextures.com/patterns/flowers.png');
+      opacity: 0.05;
+      z-index: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      color: #a00050;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    .play-button {
+      display: block;
+      margin: 0 auto 40px;
+      padding: 14px 28px;
+      font-size: 17px;
+      background: linear-gradient(to right, #ffb6c1, #ff99cc);
+      color: #fff;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 2;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .play-button:hover {
+      background: linear-gradient(to right, #ff99cc, #ffb6c1);
+      transform: scale(1.05);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .polaroid {
+      background: white;
+      padding: 12px 12px 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 220px;
+      transform: rotate(var(--rotate));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .polaroid:hover {
+      transform: scale(1.07) rotate(var(--rotate));
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .polaroid img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .caption {
+      margin-top: 12px;
+      font-size: 15px;
+      color: #4d0033;
+      text-align: center;
+    }
+    .flower-decor {
+      position: absolute;
+      width: 100px;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    .flower-top {
+      top: 20px;
+      left: 20px;
+    }
+    .flower-bottom {
+      bottom: 20px;
+      right: 20px;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Algumas lembranças nossas 🌸</h1>
+
+  <!-- Botão para iniciar a música -->
+  <button class="play-button" onclick="playMusic()">
+    Tocar música 🎵
+  </button>
+
+  <!-- Trilha sonora suave -->
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_b94e895f3c.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <div class="gallery">
+    <div class="polaroid" style="--rotate: -3deg">
+      <img src="Imagem do WhatsApp de 2025-06-30 à(s) 17.27.28_318f440c.jpg" alt="Foto 1">
+      <div class="caption">💫</div>
+    </div>
+    <div class="polaroid" style="--rotate: 2deg">
+      <img src="Imagem do WhatsApp de 2025-06-30 à(s) 17.27.31_72b289c2.jpg" alt="Foto 2">
+      <div class="caption">💕</div>
+    </div>
+    <div class="polaroid" style="--rotate: -5deg">
+      <img src="Imagem do WhatsApp de 2025-06-30 à(s) 17.27.40_a5b14af9.jpg" alt="Foto 3">
+      <div class="caption">🌅</div>
+    </div>
+    <div class="polaroid" style="--rotate: 4deg">
+      <img src="Imagem do WhatsApp de 2025-06-30 à(s) 17.27.40_a555a837.jpg" alt="Foto 4">
+      <div class="caption">💞</div>
+    </div>
+  </div>
+
+  <img class="flower-decor flower-top" src="https://www.pngmart.com/files/15/Small-Pink-Flower-PNG.png" alt="flor">
+  <img class="flower-decor flower-bottom" src="https://www.pngmart.com/files/15/Small-Pink-Flower-PNG.png" alt="flor">
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById('bgMusic');
+      audio.volume = 0.5;
+      audio.play().catch(e => {
+        alert('Clique permitido, mas o navegador bloqueou o áudio. Tente novamente.');
+        console.error(e);
+      });
+    }
+  </script>
+</body>
+</html>
